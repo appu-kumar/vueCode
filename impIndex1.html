@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+     <head>
+        <title>Panchayat season 3</title>
+     </head>
+
+     <body>
+
+        <!--  ui layer -->
+        <div id="app">
+            <div>
+                 <h1>Characters in Panchayat series</h1>
+                 <ul>
+                      <li v-for="actor in actors">{{actor}}</li>
+                 </ul>
+            </div>
+        </div>
+
+
+        <!-- data layer -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+         <script>
+                   // first step
+                   const {createApp} = Vue;
+                   
+                   // second step
+                   const app = Vue.createApp({
+                      data(){
+                        return {
+                            actors:['pradhan-ji','sachiv-ji','vinod','banrakshas','vidhayak-ji'],
+                        }
+                      }
+                   })
+                 // third step
+                app.mount('#app');
+
+         </script>
+     </body>
+</html>

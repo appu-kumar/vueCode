@@ -23,4 +23,17 @@ Creating the repo to track my vue.js learning
 
              myapp.mount("#app");
 
+# Looping in HTML with directive in Vue.js
+- Special kind of the attributes that modifies element behaviour
+- Directive starts with v- prefix
+- Add dynamic functionality
+- Used in Vue.js, Angular, Svelte
+- Immediately modfies the dom
+- eg. v-if, v-for etc.
 
+# Difference between React.js and Vue.js
+![Screenshot](VueVsReact1.png)
+![Screenshot](VueVsReact2.png)
+![Screenshot](VueVsReact3.png)
+![Screenshot](VueVsReact4.png)
+![Screenshot](VueVsReact5.png)
