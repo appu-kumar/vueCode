@@ -19,12 +19,17 @@
          </ul>
     </div>
     <script>
+             // Vue2
+             // new Vue();
+
+             // Vue3
              const {createApp} = Vue;
              const myapp = createApp({
                 data(){
                     return {
                         message:"I am learning Vue.js",
-                        name:"Appu kumar"
+                        name:"Appu kumar",
+                        books:['Math','Physics','Chemistry','c-in-depth','hc-verma']
                     }
                 }
              })
