@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <!-- Extended if-else directives -->
+
+       <div id="app">
+           <p v-if="number > 18">Above 18</p>
+           <p v-else-if="number === 18">Exact 18</p>
+           <p v-else-if="number < 18">Less than 18</p>
+           <p v-else>Do not know</p>
+       </div>
+      
+       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+       <script>
+                 Vue.createApp({
+                    data(){
+                        return {
+                            number:36,
+                        }
+                    }
+                 }).mount('#app')
+       </script>
+
+</body>
+</html>
