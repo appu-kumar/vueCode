@@ -34,6 +34,7 @@ Creating the repo to track my vue.js learning
 # Difference between React.js and Vue.js
 ![Screenshot](VueVsReact1.png)
 ![Screenshot](VueVsReact2.png)
+![Screenshot](VueVsReact6.png)
 ![Screenshot](VueVsReact3.png)
 ![Screenshot](VueVsReact4.png)
 ![Screenshot](VueVsReact5.png)
