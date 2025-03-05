@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+</head>
+
+<body>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+         <p v-if="message.length%2 === 0">Even: {{message}}</p>
+         <p v-else>Odd: {{message}}</p>
+    </div>
+    <script>
+             const {createApp} = Vue;
+             const myapp = createApp({
+                data(){
+                    return {
+                        message:"I am learning Vue.js",
+                        name:"Appu kumar"
+                    }
+                }
+             })
+
+             myapp.mount("#app");
+    </script>
+</body>
+
+</html>
