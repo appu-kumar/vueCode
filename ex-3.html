@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select the fav actor from the list</title>
+</head>
+<body>
+       <div id="app">
+         <ul>
+              <li v-for="actor in actors" style="list-style:none">{{actor}}
+                <button v-on:click="getFavActor(actor)">Add Fav Actor</button>
+              </li>
+         </ul>
+
+         <p v-if="favActors.length === 0">There are no fav actors</p>
+         <p v-else>
+            Fav actors
+         <ul>
+               <li v-for="favActor in favActors">{{favActor}}</li>
+         </ul>
+         </p>
+       </div>
+
+       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+       <script>
+
+                Vue.createApp({
+                    data(){
+                        return {
+                            actors:['ak','sk','shk','amitabh','kk-menon','bajpayee','rajneekant'],
+                            favActors:[],
+                        }
+                    },
+                    methods:{
+                        getFavActor(actor){
+                            this.favActors.push(actor);
+                        }
+                    }
+                }).mount('#app')
+       </script>
+       
+</body>
+</html>

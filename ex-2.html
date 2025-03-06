@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation of the event in vue.js</title>
+</head>
+<body>
+      <div id="app">
+            <button type="text" v-on:click="getFavChar" value="A">A</button>
+            <button type="text" v-on:click="getFavChar" value="B">B</button>
+            <button type="text" v-on:click="getFavChar" value="C">C</button>
+            <button type="text" v-on:click="getFavChar" value="D">D</button>
+            <button type="text" v-on:click="getFavChar" value="E">E</button><br />
+            <button type="submit" v-on:click="add">add</button>
+
+            <h1>My fav List</h1>
+            <p v-if="favCharacters.length === 0">There are no fav characters till now</p>
+            <ul v-else>
+                 <li v-for="character in favCharacters">{{character}}</li>
+            </ul>
+      </div>
+
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <script>
+             Vue.createApp({
+                data(){
+                    return {
+                       favCharacters:[],
+                       favCharacter:'',
+                    }
+                },
+                methods:{
+                   add(){
+                    this.favCharacters.push(this.favCharacter);
+                   },
+                   getFavChar(e){
+                    this.favCharacter=e.target.value;
+                   }
+                }
+             }).mount('#app');
+      </script>
+
+
+</body>
+</html>
