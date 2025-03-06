@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on & v-bind</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>Counter:{{count}}</h1>
+        <button v-on:click="increment">Increment</button>
+        <div>
+            <label>Increment By: </label>
+            <input type="number"  v-bind:value="incrementAmount" v-on:change="setIncrementAmount">
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    // return data
+                    count: 0,
+                    incrementAmount:20,
+                }
+            },
+            methods: {
+                increment() {
+                    this.$data.count += this.incrementAmount;
+                    // short this.count+=1 this will also work okay
+                },
+                setIncrementAmount(e){
+                    this.incrementAmount=Number(e.target.value);
+                }
+            }
+
+        }).mount('#app')
+    </script>
+
+</body>
+
+</html>

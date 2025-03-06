@@ -38,3 +38,11 @@ Creating the repo to track my vue.js learning
 ![Screenshot](VueVsReact3.png)
 ![Screenshot](VueVsReact4.png)
 ![Screenshot](VueVsReact5.png)
+
+# Nested if-else directives
+- v-if  v-else
+- v-if v-else-if v-else ...
+
+# Event Handling & View Model
+- By using v-on and v-bind to make page interactive or reactive
+- How v-model directive can be used in place of v-on and v-bind to create a two-way binding.
