@@ -61,3 +61,30 @@ Creating the repo to track my vue.js learning
 - If no arguments are passed, Vue automatically injects the event object.
 - It is useful for handling native events inside methods while also using additional parameters.
 
+# watch option
+- In Vue, the watch option lets you observe changes to a specific data property and execute a function when the property changes.
+- Running asynchronous operations (e.g., API calls).
+- Watching nested objects or arrays for changes.
+- Performing side effects when data updates.
+
+- How It Works?
+- 1 count is a data property (data()).
+- 2 In watch, we observe count.
+- 3  When count changes, Vue automatically calls the watch function.
+- 4 The function receives two parameters:
+- 4.1 newValue → the updated value.
+- 4.2 oldValue → the previous value.
+
+# Important about watch option
+- Can watch Have the Same Name as a Variable?
+- Yes! In watch, the method name should match the data property it is watching.
+
+# Best Example of the watch
+- API call
+- Side Effect like useEffect(()=>{},[])
+- Search Query (searching functionality)
+- Input value change
+
+
+
+

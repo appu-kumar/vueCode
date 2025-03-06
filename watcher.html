@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watch variable</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <button v-on:click="count++">{{count}}</button><br />
+        <label>Search Todo</label>
+        <input type="search" v-model="searchTodo">
+       
+        <p v-if="result.length===0">There is no searched value</p>
+        <div v-else>
+            <h1>Searched List</h1>
+            <ul>
+                <li v-for="res in result" >{{res}}</li>
+            </ul>
+        </div>
+       
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { toRaw } = Vue;
+        Vue.createApp({
+            data() {
+                return {
+                    count: 1,
+                    searchTodo: '',
+                    result: [],
+                    debounce: null,
+                }
+            },
+            methods: {
+
+            },
+            watch: {
+                // function name must be matching with variable name 
+                count(newVal, oldVal) {
+                    console.log(`oldVal ${newVal} ${oldVal}`)
+                },
+                searchTodo(newVal, oldVal) {
+
+                    clearTimeout(this.debounce);
+
+                    this.debounce = setTimeout(async () => {
+                        if(newVal.trim() === ''){
+                            this.result = [];
+                            return;
+                        }
+                        const res = await fetch('https://dummyjson.com/todos')
+                        const data = await res.json();
+                        console.log(data.todos);
+                        data?.todos?.forEach((val) => {
+                            if (val?.todo?.toLowerCase().includes(newVal.toLowerCase())) {
+                                this.result.push(val);
+                            }
+                        })
+                        console.log('hi', toRaw(this.result));
+                        this.result = toRaw(this.result);
+                    },500)
+
+
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
