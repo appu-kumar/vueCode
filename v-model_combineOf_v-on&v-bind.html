@@ -9,13 +9,15 @@
 
 <body>
 
-     <!-- ui layer corrosponding data layer -->
+    <!--  ui layer corrosponding data layer -->
     <div id="app">
         <h1>Counter:{{count}}</h1>
         <button v-on:click="increment">Increment</button>
         <div>
             <label>Increment By: </label>
-            <input type="number"  v-bind:value="incrementAmount" v-on:change="setIncrementAmount">
+            <!-- v-bind:value and v-on:change  together with v-model  no need to write bind the value and setIncrementAmount method both are done by v-model -->
+            <!-- <input type="number"  v-bind:value="incrementAmount" v-on:change="setIncrementAmount"> -->
+             <input type="number" v-model="incrementAmount">
         </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -35,9 +37,9 @@
                     this.$data.count += this.incrementAmount;
                     // short this.count+=1 this will also work okay
                 },
-                setIncrementAmount(e){
-                    this.incrementAmount=Number(e.target.value);
-                }
+                // setIncrementAmount(e){
+                //     this.incrementAmount=Number(e.target.value);
+                // }
             }
 
         }).mount('#app')

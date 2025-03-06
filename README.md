@@ -6,7 +6,7 @@ Creating the repo to track my vue.js learning
 - A Javascript framework for building web user interfaces.
 - A rich, incrementally adoptable ecosystem that scales between a library and fully-featured framework.
 - Builds on top of the standard HTML, CSS and JavaScript with intuitive API and world-class documentation
-- A reactive, complier-optimized rendering system that rarely requires manual optimization
+- A reactive, complier-optimized rendering system that rarely requires manual optimization.
 
 
 # Let's createApp using the CDN of Vue.js
@@ -46,3 +46,5 @@ Creating the repo to track my vue.js learning
 # Event Handling & View Model
 - By using v-on and v-bind to make page interactive or reactive
 - How v-model directive can be used in place of v-on and v-bind to create a two-way binding.
+
+# v-model  two-way binding
