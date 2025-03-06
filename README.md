@@ -48,3 +48,16 @@ Creating the repo to track my vue.js learning
 - How v-model directive can be used in place of v-on and v-bind to create a two-way binding.
 
 # v-model  two-way binding
+- Bind the data with value of input tag.
+- Update the value on value change.
+
+# @click and v-on:click
+- Both are same.
+
+# Passing the parameters and $event to the method
+- You need access to event properties (event.target, event.preventDefault(), etc.).
+- You want to modify event behavior based on the event type.
+- $event is required when passing custom arguments so that Vue still provides access to the original event object.
+- If no arguments are passed, Vue automatically injects the event object.
+- It is useful for handling native events inside methods while also using additional parameters.
+

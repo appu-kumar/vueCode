@@ -12,7 +12,8 @@
     <!--  ui layer corrosponding data layer -->
     <div id="app">
         <h1>Counter:{{count}}</h1>
-        <button v-on:click="increment">Increment</button>
+        <!-- If you do not want to pass the parameters and still you want to get native event object then don't call the method just pass reference only like "increment" -->
+        <button v-on:click="increment(10,$event)">Increment</button>      <!-- Passing argument is an optional in this code, just passing for learning purpose, like how to pass arg -->
         <div>
             <label>Increment By: </label>
             <!-- v-bind:value and v-on:change  together with v-model  no need to write bind the value and setIncrementAmount method both are done by v-model -->
@@ -33,7 +34,9 @@
                 }
             },
             methods: {
-                increment() {
+                increment(a,e) {
+                    console.log(a);
+                    console.log('event',e)
                     this.$data.count += this.incrementAmount;
                     // short this.count+=1 this will also work okay
                 },
