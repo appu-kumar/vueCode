@@ -117,17 +117,17 @@ Creating the repo to track my vue.js learning
 - Better Code Structure – Easier to read and maintain.
 
 # SFC is divided in 3 parts
-- <template>
+- 1. <template>
   <!-- HTML structure -->
 </template>
 
-- <script>
+-  2. <script>
 export default {
   // JavaScript logic
 }
 </script>
 
-- <style>
+- 3. <style>
 /* CSS styles */
 </style>
 
