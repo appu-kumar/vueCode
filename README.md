@@ -102,7 +102,35 @@ Creating the repo to track my vue.js learning
 
 - {{fullName}} actually we are callingthe fullName but no need to put fullName() Vue.js automatically handle this
 
+# Now create the project with the help of the vite
+- npm create vue@3  or npm create vite@latest
+- install volar to get notification of element of vue.js
 
 
+# SFC
+- A Single File Component (SFC) in Vue.js is a .vue file that contains the HTML, CSS, and JavaScript needed for a component in a single file.
 
+- Why Use Single File Components (SFC)?
+- Encapsulation – Everything (template, logic, styles) is in one file.
+- Reusability – Components can be reused across the app.
+- Scoped Styles – CSS applies only to the specific component.
+- Better Code Structure – Easier to read and maintain.
+
+# SFC is divided in 3 parts
+- <template>
+  <!-- HTML structure -->
+</template>
+
+- <script>
+export default {
+  // JavaScript logic
+}
+</script>
+
+- <style>
+/* CSS styles */
+</style>
+
+# Option API and Composition API
+- Options API (export default) with normal <script> </script>, the Composition API (<script setup> </script>)
 
