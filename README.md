@@ -86,5 +86,23 @@ Creating the repo to track my vue.js learning
 - Input value change
 
 
+# computed option in Vue.js
+- Use computed for derived values that need to be cached and updated reactively.
+- Use watch for side effects such as API calls, event listeners, or debounced actions.
+- If you need both, you can combine them for maximum efficiency.
+- eg. firstName and lastName---->fullName  use fullName as variable in ui layer measn where we are mounting
+
+- fullName is a computed property, but it behaves like a variable.
+- When we write {{ fullName }} in the template, Vue automatically calls the computed function and displays the returned value.
+- We do not need to call it as a function (fullName())—Vue handles it automatically.
+
+- eg. calculating totalPrize of card in E-commerce
+- computed properties are designed to derive and return values dynamically based on reactive data.
+- They act like virtual properties that derive a new value from existing data.
+
+- {{fullName}} actually we are callingthe fullName but no need to put fullName() Vue.js automatically handle this
+
+
+
 
 

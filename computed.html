@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>computed property in Vue.js</title>
+</head>
+
+<body>
+    <!-- ui -->
+    <div id="app">
+        <div>
+            <label>firstName: </label>
+            <input type="text" v-model="firstName">
+        </div>
+
+        <div>
+            <label>lastName: </label>
+            <input type="text" v-model="lastName">
+        </div>
+
+        <div>
+            <label>fullName: </label>
+            <input type="text" v-model="fullName">  <!-- Actually fullName is method internally is being called by the vue.js   in js function is also a variable-->
+        </div>
+
+
+        <ul>
+             <li v-for="product in products">{{product.price}}</li>
+        </ul>
+        <p>Total Price: {{totalPrice}}</p>
+
+    </div>
+
+
+    <!-- data and methods -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    firstName: 'don',
+                    lastName: 'prasad',
+                    products: [
+                        { id: 1, name: "Smartphone", price: 15000 },
+                        { id: 2, name: "Wireless Earbuds", price: 2000 },
+                        { id: 3, name: "USB Cable", price: 300 },
+                        { id: 4, name: "Laptop Stand", price: 450 },
+                        { id: 5, name: "Mouse", price: 600 },
+                        { id: 6, name: "Keyboard", price: 700 },
+                        { id: 7, name: "Charger", price: 350 }
+                    ]
+                }
+            },
+            methods: {
+                // implement custom method
+            },
+            computed: {
+                // compute the value based on the existing values
+                // eg. firstName,lastName are existing values and now we are calculating the fullName based on these two values.
+                // eg. silly, we can calculate the totalPrice based on the existing price
+
+                fullName() {
+                    return this.firstName + " " + this.lastName;
+                },
+                totalPrice(){
+                    return this.products.reduce((totalSum,currVal)=>{
+                           return totalSum+currVal.price;
+                    },0)
+                }
+
+            },
+            watch: {
+                // api call
+            }
+        }).mount('#app')
+    </script>
+
+
+
+</body>
+
+</html>
