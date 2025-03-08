@@ -117,20 +117,22 @@ Creating the repo to track my vue.js learning
 - Better Code Structure – Easier to read and maintain.
 
 # SFC is divided in 3 parts
-- 1. <template>
-  <!-- HTML structure -->
-</template>
-
--  2. <script>
-export default {
-  // JavaScript logic
-}
-</script>
-
-- 3. <style>
-/* CSS styles */
-</style>
+- 1. script-->For importing component
+- 2. template for html
+- 3. style for css check eg.
 
 # Option API and Composition API
 - Options API (export default) with normal <script> </script>, the Composition API (<script setup> </script>)
+
+# Why Use Vite Instead of Webpack?
+- If you write the code in script tag and put in html, no need of the build tool like vite or webpack
+- Faster development (Instant HMR).
+- Less configuration needed.
+- Smaller and optimized production builds.
+- Better for modern JavaScript frameworks (Vue, React, Svelte, etc.).
+
+# Assignment
+- Given by the Umesh
+- userValidation 
+
 
