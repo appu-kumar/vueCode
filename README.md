@@ -135,4 +135,11 @@ Creating the repo to track my vue.js learning
 - Given by the Umesh
 - userValidation 
 
+# custom component
+- Getting props in props property
+- Passing the props from App.vue to custom component or one component to another component
+- Registering the component in the parent eg. component(App.vue) inside the components property
+
+
+
 
