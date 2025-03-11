@@ -141,5 +141,60 @@ Creating the repo to track my vue.js learning
 - Registering the component in the parent eg. component(App.vue) inside the components property
 
 
+# Set up the  SSH key with greytip's project
+- 1. Step 1: Check for an Existing SSH Key
+  - ls -al ~/.ssh
+- 2. Step 2: Generate a New SSH Key
+  - ssh-keygen -t ed25519 -C "your-email@example.com"
+- 3. Step 3: Add SSH Key to SSH Agent
+  - eval "$(ssh-agent -s)"
+  - ssh-add ~/.ssh/id_ed25519
+- 4. Step 4: Add SSH Key to GitHub
+  - cat ~/.ssh/id_ed25519.pub
+  - Go to GitHub → Settings → SSH and GPG keys
+  - GitHub SSH Keys Settings
+  - Click New SSH Key → Paste your key → Add SSH Key.
+
+
+# Install brew 
+- To download application in (mac and linux)
+
+# Install Python 3.11
+- export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+- pyenv --version
+- pyenv install {python-version}
+- to install python 3.9
+- pyenv install 3.9
+- pyenv versions(list all the versions of the python in this env)
+- If you want to set any python version globally, you can use
+- pyenv global (python version)
+
+# pycharm IDE for Python
+
+
+# Some basic commands of postgresql and docker
+- \q   # Exit psql
+- \l   # To list all the dbs
+- exit # Exit the Docker container
+- 1. psql -U $(whoami) -h localhost -p 5432 -d postgres  # login using the computer username then create default postgres user or any user ok
+    - CREATE ROLE postgres WITH SUPERUSER CREATEDB CREATEROLE LOGIN PASSWORD 'yourpassword';
+- 2. Restart PostgreSQL
+    - After creating the role, restart PostgreSQL:
+    - brew services restart postgresql@15
+- 3. Login to PostgreSQL
+   - psql -U postgres -h localhost -p 5432
+- 4. Create a new database
+    - create database zaire_mt;   
+- 5. Connect to the database
+  - \c zaire_mt    
+
+
+
+
+   
+
+
 
 
