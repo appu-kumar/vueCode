@@ -36,6 +36,7 @@ export default {
 </script>
 
 <template>
+  <div style="text-align:center; margin-top:20%">
   <h1> Welcome to the username and password validation </h1>
   <p>{{username}}{{password}} </p>
   <div>
@@ -46,5 +47,6 @@ export default {
     <label> Password: </label>
     <input type="text" v-model="password"/>
   </div>
-  <button type="submit"  v-on:click="validate" > validateUser </button>
+  <button  v-on:click="validate" > validateUser </button>
+  </div>
 </template>

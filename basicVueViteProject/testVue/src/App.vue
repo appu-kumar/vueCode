@@ -1,12 +1,14 @@
 <script>
 // This is option
 import ActorList from './components/ActorList.vue'
+import UserData from './components/UserData.vue'
 
 export default {
-  components: { ActorList }, // registering the importing components
+  components: { ActorList,UserData }, // registering the importing components
   data() {
     return {
       actors: ['ak', 'sk', 'shk', 'amitabh', 'kk-menon', 'bajpayee', 'rajneekant'],
+      userData:{name:"Appu Kumar",favFood:"chaumin",age:23,gender:"male"},
       favActors: [],
     }
   },
@@ -14,12 +16,17 @@ export default {
     getFavActor(actor) {
       this.favActors.push(actor)
     },
+    changeUserName(){
+      this.userData.name="Rohit sharma";
+      this.userData.favFood="Daal Chawal";
+    },
   },
 }
 </script>
 
 <template>
-  <ActorList v-bind:actors="actors" v-bind:getFavActor="getFavActor" />
+  <UserData  v-bind:userData="userData"/>
+  <ActorList v-bind:actors="actors" v-bind:getFavActor="getFavActor"  v-on:change-userName="changeUserName"/>
   <p v-if="favActors.length === 0">There are no fav actors</p>
   <div v-else>
     Fav actors

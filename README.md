@@ -141,6 +141,24 @@ Creating the repo to track my vue.js learning
 - Registering the component in the parent eg. component(App.vue) inside the components property
 
 
+# custom event and global method(parent method)
+- In Vue.js, custom events allow communication between child and parent components, while global methods provide reusable utility functions accessible throughout the application. Let's explore both in detail.
+
+# custom event(It is like inbuilt event v-on:click,v-on:change etc)
+- It is based on the event bubbling. okay
+- Events in Vue do not bubble automatically up the component hierarchy like in the DOM.
+- Events only travel one level up, from child to direct parent.
+- Emitting Custom Events (Child to Parent Communication)
+- Use $emit() in the child component to send an event to the parent.
+- Listen the event at the parent level
+- See the syntactic sugar in the vue.js
+- See example App.vue in ActorList component
+
+
+
+
+
+
 # Set up the  SSH key with greytip's project
 - 1. Step 1: Check for an Existing SSH Key
   - ls -al ~/.ssh
@@ -189,6 +207,23 @@ eval "$(pyenv init -)"
     - create database zaire_mt;   
 - 5. Connect to the database
   - \c zaire_mt    
+- Run sql script
+- psql -U postgres -d zaire_mt -h localhost -p 5432 -f mandatory_sql_script.sql
+
+- # virtaul env
+- source .venv/bin/activate    # if virtaul env of python is already created then activate with this command
+- deactivate      ---> this command to deactivate the python virtual env
+
+- # To create new virtual environment
+- python3 -m venv python_env
+- source name_env_kro/bin/activate
+
+- # Changing the host 
+- sudo nano /etc/hosts
+
+
+
+
 
 
 

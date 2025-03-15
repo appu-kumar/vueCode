@@ -5,5 +5,5 @@ export default {
 </script>
 
 <template>
-  <p> User Details validated successfully  </p>
+  <p style="text-align:center; color:green; margin-top:25%"> User Details are validated successfully  </p>
 </template>

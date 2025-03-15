@@ -11,7 +11,7 @@ export default {
        required:true,
      }
   },
-
+  emits:['change-userName'],
   data: () => ({
   
   }),
@@ -39,5 +39,7 @@ export default {
                 <button v-on:click="getFavActor(actor)">Add Fav Actor</button>
               </li>
          </ul>
+       <button v-on:click="$emit('change-userName'); console.log('emitting')">change username</button>    <!-- This event is bubbled to parent and then corrosponding this event one method will be callled means sahi hai yaha trigger karo aur iss component ke kisi parent me method call kar iss event ke corrosponding  -->
+
 
 </template>
