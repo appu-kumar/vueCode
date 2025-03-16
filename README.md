@@ -155,6 +155,31 @@ Creating the repo to track my vue.js learning
 - See example App.vue in ActorList component
 
 
+# What is a Slot in Vue.js?
+- A slot in Vue.js is a placeholder inside a child component where parent components can insert their own content.
+- To make components more reusable and flexible.
+- To allow custom content inside a child component.
+- <slot> </slot> provided by the vue.js
+- <slot />  we can use like this also okay
+- template inside the template is used to match with name slot okay see base-layout component in emitwala project
+
+
+# Lifecycle Methods in Vue.js
+- Vue.js provides lifecycle hooks that allow you to execute code at different stages of a component’s existence. These hooks help in managing data fetching, event binding, DOM manipulation, and cleanup tasks.
+
+# There are four major phases in a Vue component’s lifecycle:
+- V.V.Imp Creation Phase – Component is being created, but not yet added to the DOM.
+  - created()
+  - Runs after data and methods are set up (but before DOM is available). Useful for API calls.
+- V.V.IMP Mounting Phase – Component is inserted into the DOM.
+  - mounted()
+  - Runs after component is added to the DOM (perfect for DOM manipulation).
+- Updating Phase – Component reacts to changes and re-renders.
+  - updated()
+  - Runs after Vue updates the DOM (useful for responding to UI changes).
+- Unmounting Phase – Component is removed from the DOM.
+  - unmounted()
+  - Runs after component is removed from the DOM.
 
 
 
