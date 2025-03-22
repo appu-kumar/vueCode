@@ -171,15 +171,35 @@ Creating the repo to track my vue.js learning
 - V.V.Imp Creation Phase – Component is being created, but not yet added to the DOM.
   - created()
   - Runs after data and methods are set up (but before DOM is available). Useful for API calls.
+  - Good for API calls that don’t depend on the DOM. E.g., fetching user data, configs, etc.
 - V.V.IMP Mounting Phase – Component is inserted into the DOM.
   - mounted()
   - Runs after component is added to the DOM (perfect for DOM manipulation).
+  - Good for API calls that depend on the DOM. E.g., measuring elements, interacting with third-party libraries.
 - Updating Phase – Component reacts to changes and re-renders.
   - updated()
   - Runs after Vue updates the DOM (useful for responding to UI changes).
 - Unmounting Phase – Component is removed from the DOM.
   - unmounted()
   - Runs after component is removed from the DOM.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -214,9 +234,6 @@ eval "$(pyenv init -)"
 - If you want to set any python version globally, you can use
 - pyenv global (python version)
 
-# pycharm IDE for Python
-
-
 # Some basic commands of postgresql and docker
 - \q   # Exit psql
 - \l   # To list all the dbs
@@ -234,6 +251,34 @@ eval "$(pyenv init -)"
   - \c zaire_mt    
 - Run sql script
 - psql -U postgres -d zaire_mt -h localhost -p 5432 -f mandatory_sql_script.sql
+- brew services restart postgresql@15
+
+- login using docker   -->  docker exec -it citus psql -U postgres
+
+- docker system prune -a
+- docker run -d --name citus -p 5432:5432 -e POSTGRES_PASSWORD=mypass citusdata/citus:12.1     --> create the image 
+- sudo docker exec -it citus bash 
+
+- sudo docker exec -it citus bash
+- psql -U postgres
+- CREATE DATABASE zaire_mt_1;
+- \q
+- psql -U postgres -d zaire_mt_1 -f test1.sql    -->Run the SQL Script Inside Docker
+- exit 
+- docker cp test1.sql citus:/test1.sql
+- psql -U postgres -d zaire_mt_1 -f /test1.sql
+- sudo lsof -i:5432
+- kill -9 73423
+
+
+- Inside Docker: Works ✅ → Always use docker exec -it citus psql -U postgres
+- From Mac:
+- If failing, check brew services list
+- Stop local PostgreSQL if needed
+- Use psql -h localhost -p 5432 -U postgres
+
+
+
 
 - # virtaul env
 - source .venv/bin/activate    # if virtaul env of python is already created then activate with this command
@@ -245,6 +290,56 @@ eval "$(pyenv init -)"
 
 - # Changing the host 
 - sudo nano /etc/hosts
+
+
+# All commands to setup project
+- brew installs wale steps
+- /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+- eval "$(/opt/homebrew/bin/brew shellenv)"
+- brew info
+
+- Installing git
+- brew install git
+
+# python setup for recruit core and recruit marketplace
+- brew install pyenv
+- export PYENV_ROOT="$HOME/.pyenv"
+- [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+- eval "$(pyenv init -)"
+- pyenv --version   
+- pyenv  -->it is used to install various versions of the python
+- pyenv versions  --> list all the python installed
+
+- brew install nvm
+- nano ~/.zshrc
+- export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+- nvm install 14 failed need to check
+- nvm use {node_version}   --> use node according to your requirement
+
+
+
+# project setup 
+- mkdir -p ~/Workspace/recruit-platform-core
+- git clone git@github.com:greytip/recruit-platform-core.git
+- python3 -m venv python-env 
+- source python-env/bin/activate
+- If version error comes try to create virtual env under python 3.11.11 okay
+
+# Run postgresql using docker
+- docker run -d --name citus -p 5432:5432 -e POSTGRES_PASSWORD=mypass citusdata/citus:12.1
+- psql -U postgres -h localhost -p 5432    -->login wala
+
+# postgresql locally
+- brew services list
+- brew services start postgresql@15
+- psql -U postgres    ->login 
+
+
+
+
 
 
 
