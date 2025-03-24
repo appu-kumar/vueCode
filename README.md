@@ -229,6 +229,17 @@ Creating the repo to track my vue.js learning
 - It was introduced in Vue 3 to make components more readable, reusable, and maintainable—especially for large projects.
 - The Composition API is not a replacement for the Options API but an alternative approach for structuring Vue components. It helps organize logic, improves reusability, and makes the code easier to maintain, especially in large projects.
 
+# What is ref() in Vue 3?
+- ref() is a function from Vue 3 that makes a value reactive.
+- This means Vue will track changes to the value and automatically update the UI.
+- ref() returns an object
+- ref() is used inside setup() in Vue 
+
+# Write reactive data at single place
+- const state = reactive({name:'',users:[], etc..});
+- It is enhancement of the ref() okay
+
+
 
 
 
