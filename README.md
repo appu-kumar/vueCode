@@ -184,9 +184,50 @@ Creating the repo to track my vue.js learning
   - Runs after component is removed from the DOM.
 
 
+# meta component
+- In Vue.js, meta components are used to dynamically update the title, description, and other metadata of a page.
+- This is important for SEO (Search Engine Optimization) and social media sharing.
+
+# Why props option in export default object of child
+- Vue uses export default to track, validate, and reactively update props.
+- If the parent updates a prop, Vue can detect the change.
+- Since Vue components are modular, export default ensures each component:
+
+# Vue.js follows modular component paradigm
+- A modular component is a self-contained, reusable, and independent unit of a UI.
+- It helps break down large applications into smaller, manageable parts.
+- Each component focuses on a specific task, making the code clean and scalable.
+
+# How export default Works in Vue.js?
+- In Vue.js, export default is used to export an object that contains:
+- Data (JavaScript logic)
+- Template (HTML UI structure)
+- eg. 
+- export default {
+  template: `<h1>Hello, {{ name }}!</h1>`,
+  data() {
+    return { name: "Appu" };
+  }
+};
+
+
+# How is the Template UI Exported?
+- Vue's internal compiler does this by:
+- Extracting the <template>
+- Compiling it into a render function
+- Merging it with the exported object
 
 
 
+# Fetching the data from the JSONPlaceholder API, render the returned list to the page
+- See in the FetchData project okay.
+
+
+
+# Composition API
+- The Composition API is a way of writing Vue components where we group logic together instead of splitting it across different component options (data, methods, computed, watch, etc.).
+- It was introduced in Vue 3 to make components more readable, reusable, and maintainable—especially for large projects.
+- The Composition API is not a replacement for the Options API but an alternative approach for structuring Vue components. It helps organize logic, improves reusability, and makes the code easier to maintain, especially in large projects.
 
 
 
