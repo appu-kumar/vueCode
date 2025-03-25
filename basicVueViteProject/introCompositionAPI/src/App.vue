@@ -32,6 +32,6 @@ export default {
   <p>Hello world</p>
   <input type="text" v-on:change="changeUserName" v-model="name">
   <p>{{ name}}</p>
-  <DisplayUser  />
+  <DisplayUser name="Appu Bhim prasad"  />
 
 </template>

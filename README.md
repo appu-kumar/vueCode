@@ -242,10 +242,21 @@ Creating the repo to track my vue.js learning
 
 
 # Final verdict over the Composition API
-- Write the script tag with setup    '<script setup>  </script>'.
+- Write the script tag with setup    '<script setup>  </script>'. This line removes the setup() { }  function ok
 - No need to register the component automatically done by the vue.js compiler.
-- No need to return any value because there is no any setup kind of the funciton.
+- No need to return any value, Because there is no any setup kind of the funciton.
+- defineProps() and defineEmits()  
 - Continue working on this you will get more knowledge.
+
+
+# Composables 
+- Composables are reusable functions that help organize and share logic in Vue 3 using the Composition API. They allow you to extract logic from components and reuse it across multiple components.
+- Imagine you have multiple components that need to fetch data, handle user authentication, or manipulate the DOM. Instead of repeating the logic in each component, you can create a composable and reuse it.
+- With Composables: A single function (useUser()) can be reused in different components.
+- A composable is simply a function that encapsulates reusable logic.
+
+
+
 
 
 
