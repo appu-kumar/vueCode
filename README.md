@@ -241,6 +241,14 @@ Creating the repo to track my vue.js learning
 
 
 
+# Final verdict over the Composition API
+- Write the script tag with setup    '<script setup>  </script>'.
+- No need to register the component automatically done by the vue.js compiler.
+- No need to return any value because there is no any setup kind of the funciton.
+- Continue working on this you will get more knowledge.
+
+
+
 
 
 
