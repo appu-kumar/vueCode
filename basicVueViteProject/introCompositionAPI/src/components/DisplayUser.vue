@@ -1,8 +1,33 @@
-<script>
+<script setup>
 import {ref,reactive,computed} from 'vue'
-export default {
-    setup() {
-          // all are in one place, that is why it is composition API
+// export default {
+//     setup() {
+//           // all are in one place, that is why it is composition API
+//         const userList = ref([]);    // data in option API
+
+//         const state = reactive({fname:'Appu',lname:'Kumar',age:0,});
+
+//         const fullname = computed(()=>state.fname+" "+state.lname);
+
+//         async function fetchUsers(){     // methods:  in option API
+//             const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//             const data = await response.json();
+//             userList.value = data;
+//         }
+//         userList.value = fetchUsers()    // calling like  from created: 
+                           
+//      return {
+//         userList,
+//         fetchUsers,
+//         fullname,
+//         state,
+//      }
+
+//     },
+   
+// }
+
+// This is the exact composition API, no need of setup method, no need of the return things and no need to register the component etc. 
         const userList = ref([]);    // data in option API
 
         const state = reactive({fname:'Appu',lname:'Kumar',age:0,});
@@ -15,18 +40,6 @@ export default {
             userList.value = data;
         }
         userList.value = fetchUsers()    // calling like  from created: 
-                           
-     return {
-        userList,
-        fetchUsers,
-        fullname,
-        state,
-     }
-
-    },
-   
-}
-
 
 </script>
 
