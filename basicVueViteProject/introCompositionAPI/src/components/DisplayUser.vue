@@ -2,6 +2,7 @@
 import {ref,reactive,computed} from 'vue'
 export default {
     setup() {
+          // all are in one place, that is why it is composition API
         const userList = ref([]);    // data in option API
 
         const state = reactive({fname:'Appu',lname:'Kumar',age:0,});
@@ -13,7 +14,8 @@ export default {
             const data = await response.json();
             userList.value = data;
         }
-                             // all are in one method, that is why it is composition API
+        userList.value = fetchUsers()    // calling like  from created: 
+                           
      return {
         userList,
         fetchUsers,
@@ -22,9 +24,7 @@ export default {
      }
 
     },
-    created(){
-        this.fetchUsers()         // calling from created:  
-    }
+   
 }
 
 
