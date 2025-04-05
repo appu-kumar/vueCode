@@ -257,6 +257,109 @@ Creating the repo to track my vue.js learning
 
 
 
+# Styling in vue.js, Vue.js provides two main ways to style components:
+- Global Styling → Styles apply to all components in the app.
+- Scoped Styling → Styles apply only to a specific component.
+
+# When to use gloabl styling.
+- When you want styles to be applied across the entire app.
+- Create a main.css file, here in the project, src/assets/main.css
+- Import into main.js
+- If you write the style without scoped inside any component, it will be applyied to entire app okay so make sure that to put scoped inside style tag in child component okay.
+- Example: Fonts, layout styles, theme colors.
+
+# When to use local styling. or When to Use Scoped Styles?
+- When you want styles to affect only a single component.
+- Helps prevent style conflicts between components.
+
+
+# Priority over styling
+- Scoped styles → Vue automatically adds unique attribute selectors to ensure styles apply only within the component.
+- Global styles → Apply to the entire app but can be overridden by scoped styles in a specific component.
+- Inline styles (style attribute on elements) → Have the highest priority.
+- Use <style scoped> for small apps or where you don’t need dynamic styling.
+- Use <style module> for better performance, reusability, and avoiding conflicts in large apps.
+
+
+
+# Routing with vue router
+- Go to its website firstly ok.
+- Read the Documentation and install vue router lib in your project.
+- Generally  we define the route's path inside the router.js or router/index.js  
+- Register the route's path inside the main.js
+- Pages inside the views folder(generally not compulsory ok)
+
+
+# Note::
+- In templates, component's name can be written in either PascalCase or kebab-case.
+- eg. <RouterView> or <router-view>
+- In child route do not mention the '/' with path ok
+- about/setting     it means setting wala component will be in about page ok (according to router.js or router/index.js)
+
+# Why history option in createRouter() method's object     history key in vue.js interact with browser's history API
+- 1. createWebHistory() → HTML5 History Mode (clean URLs)
+  -  Uses the browser’s History API.
+  -  URLs are clean: /about, /contact, etc.
+  -  No # symbol in the URL.
+  -  Looks like a "real" website — good for SEO and clean UI.
+
+- 2. createWebHashHistory() → Hash Mode
+ - Uses the hash # symbol in URLs.
+ - URLs look like: /#/about, /#/contact
+ - Hash-based routing doesn’t require server configuration.
+ - Not good for SEO (because search engines ignore everything after #).
+
+- 3. createMemoryHistory() → Memory Mode
+ - Doesn’t interact with browser URL at all.
+ - Everything stays in memory.
+
+# NOTE:- So, Why history Is Needed?
+- Because without telling Vue Router how to manage navigation, it won’t know:
+- Whether to change the URL
+- Whether to push to browser history
+- How to respond to browser back/forward buttons
+- Whether to use /about or /#/about 
+
+
+# Directly importing a component vs using import() for dynamic import (lazy loading)  or many names of concept eg. lazy loading, code splitting, delay in navigation or fast intial loading
+- Direct Import vs import() (Lazy Loading)
+- 1. Direct import 
+  - The component is imported immediately when the app starts.
+  - All components are bundled together in the main JavaScript file (big bundle).
+  - Faster navigation, but slower initial load (especially with many components).
+  - Use this for: Frequently visited routes like /, /home, etc.
+  - All components bundled together. Larger JS file at first load.
+
+- 2. Dynamic Import with import() — Lazy Loading
+ - The component is loaded only when the route is visited.
+ - Vue Router splits the code into separate chunks (code-splitting).
+ - Faster initial load, but a small delay the first time user visits that route.
+ - Use this for: Less frequently visited or heavy components like: /about  /admin-dashboard /settings  Modals or pages with large libraries
+ - Vue generates separate JS files for /home , /about. Loads each only when needed.
+
+# Note 
+- Webpack or Vite will create a separate .js chunk for it. You can see it in your Network tab or the build folder.
+
+
+# Programatically Routing with vue router
+# Routing in the composition API
+- useRouter()  --> It points the router instance which has been created inside the main.js
+- useRoute()  ---> It points the current router
+
+# Routing in the Option API
+- this.$router  
+- this.$route  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
